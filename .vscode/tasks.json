@@ -1,0 +1,41 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "npm: build",
+			"detail": "webpack --config webpack.config.js"
+		},
+		{
+			"type": "npm",
+			"script": "test",
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "npm: test",
+			"detail": "mocha --require ts-node/register test/**/*.ts"
+		},
+		{
+			"type": "npm",
+			"script": "format",
+			"label": "npm: format",
+			"detail": "prettier --write 'src/**/*.ts' 'test/**/*.ts'",
+			"problemMatcher": []
+		},
+		{
+			"type": "npm",
+			"script": "release",
+			"problemMatcher": [],
+			"label": "npm: release",
+			"detail": "webpack --config webpack.config.js --mode=production"
+		}
+	]
+}
